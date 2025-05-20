@@ -49,6 +49,7 @@
   }
   .navbar{
     display: flex;
+    height: 80px;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
