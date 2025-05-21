@@ -5,15 +5,6 @@
     padding: 0;
     box-sizing: border-box;
   }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
   html, body {
     height: 100%;
     width: 100%;
@@ -39,15 +30,12 @@
     color: inherit;
   }
   
-  ul, ol {
-    list-style: none;
-  }
-  
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
   .navbar{
+    overflow: hidden;
     display: flex;
     height: 80px;
     align-items: center;
@@ -122,7 +110,7 @@
   .botoes-topo {
     display: flex;
     gap: 10px;
-    margin: 40px 50px;
+    margin: 50px 50px;
     justify-content:flex-start;
   }
 
@@ -172,13 +160,13 @@
 }
 
 .carro-card {
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 10px;
     overflow: hidden;
     width: 250px;
     height: 230px;
     text-align: center;
-    background: white;
+    background: #ECE8E5;
 }
 
 .carro-card img {
