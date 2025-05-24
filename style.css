@@ -1,206 +1,150 @@
 /* reset.css */
-:root{
+:root {
   --bg-color: #ECE8E5;
   --border-color: #333;
   --button-enabled-color: #d9d9d9;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  html, body {
-    font-family: 'Inria Sans', sans-serif;
-    height: 100%;
-    width: 100%;
-    background: var(--bg-color);
-  }
-  
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  
-  input, button, textarea, select {
-    font: inherit;
-    color: inherit;
-    background: none;
-    border: none;
-    outline: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  .navbar{
-    overflow: hidden;
-    display: flex;
-    height: 80px;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid  var(--border-color);
-  }
-  .navbar-left{
-    display: flex;
-    flex-direction: row;
-
-  }
-  
-  .navbar .login-item{
-    order: 2;
-    flex:1;
-    display : flex;
-    justify-content: flex-end;
-  }
-  .navbar .logo {
-    order:0;
-    flex:1;
-    display: flex;
-    justify-content: center;
-  }
-  .navbar .menu-item{
-    order: -2;
-    display:flex;
-    justify-content: flex-start;
-  }
- .menu-item {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .5s;
-  }
-
-  .menu-item:focus {
-      outline: none;
-  }
-
-  .menu-item:hover {
-      opacity: 0.7;
-  }
-  .login-button
-  {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: .5;
-  }
-  .login-button:focus {
-      outline: none;
-  }
-
-  .login-button:hover {
-      opacity: 0.7;
-  }
-  .botoes-topo {
-    display: flex;
-    order: -1;
-    margin: 10px 20px;
-    justify-content:flex-start;
-  }
-
-  .botoes-topo button {
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 10px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: .5s;
-  }
-
-  .botoes-topo button:focus {
-     background: var(--button-enabled-color);
-  }
-  .botoes-topo button:hover {
-    opacity: 0.7;
-  }
-  .input-wrapper {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    max-width: 800px;
-    flex-wrap: wrap;
-    margin: 30px auto;
-  }
-
-  .input-box {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .input-box input {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 16px;
-  }
-  .carros-grid {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 20px;
-    margin-top: 40px;
-    padding: 0 40px;
+  margin: 0;
+  box-sizing: border-box;
 }
-.carro-tipo{
+
+html,
+body {
+  font-family: 'Inria Sans', sans-serif;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-color);
+}
+
+#menu a {
+  transition: 0.7s;
+}
+
+#menu a:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+#menu-login a {
+  transition: 0.7s;
+}
+
+#menu-login a:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+#menu-hamburguer:hover #menu-hamburguer-submenu {
+  display: flex;
+}
+
+#logo-menu {
+  transition: 0.7s;
+}
+
+#logo-menu:hover {
+  opacity: 0.7;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+.input-wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  max-width: 800px;
+  flex-wrap: wrap;
+  margin: 30px auto;
+}
+
+.input-box {
   display: flex;
   flex-direction: column;
-
+  gap: 5px;
+  width: 100%;
+  max-width: 350px;
 }
-.carros-cards
-{
+
+.input-box input {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+.carros-grid {
   display: flex;
-  gap: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding: 0 40px;
+}
+
+.carro-tipo {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .carro-card {
-    border: 1px solid black;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-direction: column;
-    width: 100%;
-    max-width: 290px;
-    height: 230px;
-    text-align: center;
-    background: var(--bg-color);
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  width: 100%;
+  max-width: 290px;
+  height: 230px;
+  text-align: center;
+  background: var(--bg-color);
 }
 
 .carro-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 .carro-card p {
-    padding: 10px;
-    font-weight: bold;
+  padding: 10px;
+  font-weight: bold;
 }
 
-
-
-
-  
-  
-  
+/*
+* {
+  border: 2px solid green;
+}
+*/
