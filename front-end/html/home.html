@@ -1,0 +1,81 @@
+<!-- Hero Section -->
+<section class="container mx-auto px-4 py-16">
+    <div class="flex flex-col lg:flex-row items-center justify-between">
+        <div class="lg:w-1/2 mb-12 lg:mb-0 fade-in">
+            <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <span class="text-primary-orange">ALUGUE</span> <span class="text-gray-800">SEU</span><br>
+                <span class="text-gray-800">VEÍCULO</span> <span class="text-primary-purple">QUANDO</span><br>
+                <span class="text-gray-800">E</span> <span class="text-primary-purple">ONDE</span> <span
+                    class="text-gray-800">QUISER</span>
+            </h1>
+            <div class="w-20 h-1 bg-primary-purple mb-8 rounded-full"></div>
+            <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+                Conecte-se com proprietários de veículos em sua região.
+                Aluguel seguro, prático e econômico.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="loadPage('rent-vehicle.html', 'nav-vehicles')"
+                    class="btn-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg flex items-center justify-center space-x-2">
+                    <span>EXPLORAR</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button
+                    class="border-2 border-primary-purple text-primary-purple px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-primary-purple hover:text-white transition-all duration-200">
+                    SAIBA MAIS →
+                </button>
+            </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center">
+            <div class="relative">
+                <div class="w-80 h-80 bg-primary-orange rounded-full opacity-80"></div>
+                <img src="/public/assets/Carro.png" alt="Carro"
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-auto">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Como Funciona Section -->
+<section class="container mx-auto px-4 py-16">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">COMO FUNCIONA?</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            O Locamobi facilita o aluguel de veículos tanto para locadores quanto para locatários,
+            fazendo ambos serem atendidos a poucos cliques de distância.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-primary-purple rounded-2xl p-8 text-white text-center card-hover">
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-plus text-primary-purple text-2xl"></i>
+            </div>
+            <h3 class="font-semibold mb-3">Cadastre Veículos</h3>
+            <p class="text-sm opacity-90">Os locatários podem adicionar veículos</p>
+        </div>
+
+        <div class="bg-primary-orange rounded-2xl p-8 text-white text-center card-hover">
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-search text-primary-orange text-2xl"></i>
+            </div>
+            <h3 class="font-semibold mb-3">Busque e Filtre</h3>
+            <p class="text-sm opacity-90">O locador pode procurar por veículos com todos os filtros que precisar</p>
+        </div>
+
+        <div class="bg-primary-purple rounded-2xl p-8 text-white text-center card-hover">
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-star text-primary-purple text-2xl"></i>
+            </div>
+            <h3 class="font-semibold mb-3">Avalie e Seja Avaliado</h3>
+            <p class="text-sm opacity-90">Sistema de avaliações mútuas para garantir qualidade e confiança</p>
+        </div>
+
+        <div class="bg-primary-orange rounded-2xl p-8 text-white text-center card-hover">
+            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-handshake text-primary-orange text-2xl"></i>
+            </div>
+            <h3 class="font-semibold mb-3">Negócio Fechado!</h3>
+            <p class="text-sm opacity-90">E pronto! Negócio Feito!</p>
+        </div>
+    </div>
+</section>

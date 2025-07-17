@@ -1,0 +1,365 @@
+<div class="pt-24">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Progress Steps -->
+            <div class="flex justify-center mb-12">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div id="step1-indicator" class="progress-step active w-8 h-1 rounded-full"></div>
+                        <span class="ml-2 text-sm text-gray-600">Termos</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div id="step2-indicator" class="progress-step w-8 h-1 bg-gray-300 rounded-full"></div>
+                        <span class="ml-2 text-sm text-gray-600">Básicas</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div id="step3-indicator" class="progress-step w-8 h-1 bg-gray-300 rounded-full"></div>
+                        <span class="ml-2 text-sm text-gray-600">Técnicas</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div id="step4-indicator" class="progress-step w-8 h-1 bg-gray-300 rounded-full"></div>
+                        <span class="ml-2 text-sm text-gray-600">Fotos</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div id="step5-indicator" class="progress-step w-8 h-1 bg-gray-300 rounded-full"></div>
+                        <span class="ml-2 text-sm text-gray-600">Comerciais</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Left Column - Registration Form -->
+                <div class="flex-1">
+                    <!-- Step 1: Terms and Conditions -->
+                    <div id="step1" class="bg-white rounded-2xl border-2 border-primary-purple p-8 shadow-soft">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                            Cadastrar Veículo
+                            <div class="w-12 h-0.5 bg-primary-orange mt-2"></div>
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-3">Contrato Política de Privacidade</h3>
+                                <div class="border border-gray-300 rounded-lg p-4 h-32 overflow-y-auto text-sm text-gray-600 bg-gray-50">
+                                    <p class="mb-2"><strong>1. Coleta de Informações:</strong></p>
+                                    <p class="mb-2">Coletamos informações como nome, telefone, e-mail, cidade, dados do veículo (placa, RENAVAM, modelo, cor, tipo, entre outros), para fins de identificação, análise e exibição na página de locação.</p>
+                                    <p class="mb-2"><strong>2. Uso das Informações:</strong></p>
+                                    <p class="mb-1">Seus dados serão utilizados exclusivamente para:</p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>Facilitar o processo de cadastro do seu veículo;</li>
+                                        <li>Permitir a locação segura por terceiros;</li>
+                                        <li>Cumprir obrigações legais;</li>
+                                        <li>Entrar em contato com você, caso necessário.</li>
+                                    </ul>
+                                    <p class="mt-2"><strong>3. Compartilhamento:</strong></p>
+                                </div>
+                                <div class="flex items-center space-x-2 mt-3">
+                                    <input type="checkbox" id="privacy" class="w-4 h-4 text-primary-orange rounded border-gray-300 focus:ring-primary-orange">
+                                    <label for="privacy" class="text-sm text-gray-700">Eu li e concordo com estes termos e condições.</label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-3">Termo de Responsabilidade e Conscientização</h3>
+                                <div class="border border-gray-300 rounded-lg p-4 h-32 overflow-y-auto text-sm text-gray-600 bg-gray-50">
+                                    <p class="mb-2"><strong>Veracidade das Informações:</strong></p>
+                                    <p class="mb-2">Declaro que todas as informações fornecidas sobre o veículo (incluindo placa, RENAVAM, modelo, cor, tipo, características e disponibilidade) são verdadeiras, completas e atualizadas.</p>
+                                    <p class="mb-2"><strong>Documentação:</strong></p>
+                                    <p class="mb-2">Confirmo que o veículo está devidamente regularizado, com todos os documentos obrigatórios em dia, como licenciamento, IPVA e seguro (se exigido), e que não possui pendências judiciais ou administrativas.</p>
+                                </div>
+                                <div class="flex items-center space-x-2 mt-3">
+                                    <input type="checkbox" id="terms" class="w-4 h-4 text-primary-orange rounded border-gray-300 focus:ring-primary-orange">
+                                    <label for="terms" class="text-sm text-gray-700">Eu li e concordo com estes termos e condições.</label>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end">
+                                <button onclick="nextStep()" class="btn-primary text-white px-8 py-3 rounded-lg font-medium">
+                                    Iniciar Cadastro
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Basic Information -->
+                    <div id="step2" class="hidden bg-white rounded-2xl border-2 border-primary-purple p-8 shadow-soft">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                            Informações Básicas do Veículo
+                            <div class="w-12 h-0.5 bg-primary-orange mt-2"></div>
+                        </h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Marca</label>
+                                <input type="text" placeholder="VolksWagen" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Modelo</label>
+                                <input type="text" placeholder="Gol" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Ano</label>
+                                <input type="text" placeholder="17/04/2012" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Cor</label>
+                                <input type="text" placeholder="Prata" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Placa</label>
+                                <input type="text" placeholder="Ex: ACD 1E23" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Estado</label>
+                                <input type="text" placeholder="Santa Catarina" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-gray-600 font-medium mb-2">RENAVAM</label>
+                            <input type="text" placeholder="41794437650" class="input-focus w-full max-w-xs p-3 border border-gray-300 rounded-lg outline-none">
+                        </div>
+
+                        <div class="flex justify-between">
+                            <button onclick="prevStep()" class="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                                Voltar
+                            </button>
+                            <button onclick="nextStep()" class="btn-primary text-white px-8 py-3 rounded-lg font-medium">
+                                Próximo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Technical Specifications -->
+                    <div id="step3" class="hidden bg-white rounded-2xl border-2 border-primary-purple p-8 shadow-soft">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                            Características Técnicas
+                            <div class="w-12 h-0.5 bg-primary-orange mt-2"></div>
+                        </h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Tipo</label>
+                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                    <option>Carro</option>
+                                    <option>SUV</option>
+                                    <option>Hatchback</option>
+                                    <option>Sedan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Classificação</label>
+                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                    <option>Econômico</option>
+                                    <option>Intermediário</option>
+                                    <option>Premium</option>
+                                    <option>Utilitário</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Tipo de Câmbio</label>
+                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                    <option>Manual</option>
+                                    <option>Automático</option>
+                                    <option>CVT</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Número de Lugares</label>
+                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                    <option>5</option>
+                                    <option>2</option>
+                                    <option>4</option>
+                                    <option>7</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Número de Portas</label>
+                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                    <option>4</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-600 font-medium mb-2">Ar Condicionado</label>
+                                <select class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                    <option>Sim</option>
+                                    <option>Não</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-gray-600 font-medium mb-2">Air Bag</label>
+                            <select class="input-focus w-full max-w-xs p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                <option>Sim</option>
+                                <option>Não</option>
+                            </select>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <button onclick="prevStep()" class="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                                Voltar
+                            </button>
+                            <button onclick="nextStep()" class="btn-primary text-white px-8 py-3 rounded-lg font-medium">
+                                Próximo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Photo Upload -->
+                    <div id="step4" class="hidden bg-white rounded-2xl border-2 border-primary-purple p-8 shadow-soft">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                            Envio de Fotos do Veículo
+                            <div class="w-12 h-0.5 bg-primary-orange mt-2"></div>
+                        </h2>
+                        
+                        <div class="mb-6">
+                            <h3 class="font-semibold text-gray-800 mb-4">Orientações</h3>
+                            <div class="bg-gray-50 border border-gray-300 rounded-lg p-4 text-sm text-gray-600">
+                                <ul class="space-y-2">
+                                    <li>• Enviar No Mínimo 3 Imagens: Frente, Traseira, Lateral Esquerda E Lateral Direita.</li>
+                                    <li>• Boa Iluminação E Fundo Neutro.</li>
+                                    <li>• Sem Placa Coberta Ou Itens Pessoais Visíveis.</li>
+                                    <li>• Máximo 20Mb.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center mb-8 hover:border-primary-orange transition-colors" id="dropZone">
+                            <div class="mb-4">
+                                <i class="fas fa-cloud-upload-alt text-primary-purple text-4xl"></i>
+                            </div>
+                            <p class="text-gray-600 mb-4">Você pode arrastar e soltar arquivos aqui para adicioná-los.</p>
+                            <button class="btn-primary text-white px-6 py-3 rounded-lg font-medium">
+                                Selecionar Fotos do Veículo
+                            </button>
+                            <p class="text-gray-400 text-sm mt-2">.jpg, .png e .heic</p>
+                            <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.png,.heic" class="hidden">
+                        </div>
+
+                        <div id="uploadedFiles" class="mb-8"></div>
+
+                        <div class="flex justify-between">
+                            <button onclick="prevStep()" class="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                                Voltar
+                            </button>
+                            <button onclick="nextStep()" class="btn-primary text-white px-8 py-3 rounded-lg font-medium">
+                                Próximo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Commercial Information -->
+                    <div id="step5" class="hidden bg-white rounded-2xl border-2 border-primary-purple p-8 shadow-soft">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                            Informações Comerciais
+                            <div class="w-12 h-0.5 bg-primary-orange mt-2"></div>
+                        </h2>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <label class="block text-gray-800 font-medium mb-4">
+                                    Quais dias da semana você quer deixar o veículo disponível para locação?
+                                </label>
+                                <div class="flex items-center space-x-2">
+                                    <input type="text" placeholder="20/05/2025 - 30/05/2025" class="input-focus flex-1 p-3 border border-gray-300 rounded-lg outline-none">
+                                    <i class="fas fa-calendar text-gray-400"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-800 font-medium mb-4">
+                                    Qual será o valor da diária para locação do veículo?
+                                </label>
+                                <div class="mb-4">
+                                    <h4 class="font-semibold text-gray-800 mb-4">Faixa de Preço/ Diária</h4>
+                                    <div class="flex items-center space-x-4">
+                                        <span class="text-primary-purple font-bold">R$50</span>
+                                        <div class="flex-1 relative">
+                                            <input type="range" min="50" max="900" value="400" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                                        </div>
+                                        <span class="text-primary-orange font-bold">R$900</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <button onclick="prevStep()" class="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                                    Voltar
+                                </button>
+                                <button onclick="submitVehicle()" class="btn-primary text-white px-8 py-3 rounded-lg font-medium">
+                                    Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - My Vehicles -->
+                <div class="w-80">
+                    <div class="bg-white rounded-2xl border-2 border-primary-purple p-6 shadow-soft sticky top-32">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">
+                            Meus veículos
+                            <div class="w-12 h-0.5 bg-primary-orange mt-2"></div>
+                        </h3>
+                        
+                        <div class="border border-gray-300 rounded-lg p-4 bg-gray-50 mt-6">
+                            <!-- Table Header -->
+                            <div class="grid grid-cols-3 gap-4 mb-4 pb-2 border-b border-gray-300">
+                                <span class="font-semibold text-gray-700 text-sm">Selecionar</span>
+                                <span class="font-semibold text-gray-700 text-sm">Veículo</span>
+                                <span class="font-semibold text-gray-700 text-sm">Status</span>
+                            </div>
+
+                            <!-- Vehicle List -->
+                            <div class="space-y-3">
+                                <div class="grid grid-cols-3 gap-4 items-center py-2">
+                                    <div class="flex justify-center">
+                                        <input type="radio" name="vehicle" class="w-4 h-4 text-primary-orange">
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Gol</span>
+                                    <span class="text-gray-700 text-sm">Alugado</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-4 items-center py-2">
+                                    <div class="flex justify-center">
+                                        <input type="radio" name="vehicle" class="w-4 h-4 text-primary-orange" checked>
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Corsa</span>
+                                    <span class="text-gray-700 text-sm">Livre</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-4 items-center py-2">
+                                    <div class="flex justify-center">
+                                        <input type="radio" name="vehicle" class="w-4 h-4 text-primary-orange">
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Celta</span>
+                                    <span class="text-gray-700 text-sm">Livre</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-4 items-center py-2">
+                                    <div class="flex justify-center">
+                                        <input type="radio" name="vehicle" class="w-4 h-4 text-primary-orange">
+                                    </div>
+                                    <span class="text-gray-700 text-sm">Kwid</span>
+                                    <span class="text-gray-700 text-sm">Alugado</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-4 items-center py-2">
+                                    <div class="flex justify-center">
+                                        <input type="radio" name="vehicle" class="w-4 h-4 text-primary-orange">
+                                    </div>
+                                    <span class="text-gray-700 text-sm">HB20</span>
+                                    <span class="text-gray-700 text-sm">Alugado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-6">
+                            <button class="btn-primary text-white px-6 py-2 rounded-lg font-medium">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
