@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Esqueci Senha</title>
+    <link rel="stylesheet" href="/front-end/css/login-esqueci-senha.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Recuperar Senha</h1>
+        <form id="recoveryForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" name="email" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Adiciona efeito de ondulação ao fundo
+            const body = document.body;
+            let mouseX = 0;
+            let mouseY = 0;
+
+            body.addEventListener('mousemove', function (e) {
+                mouseX = e.clientX / window.innerWidth;
+                mouseY = e.clientY / window.innerHeight;
+
+                // Aplica um efeito suave de parallax ao fundo
+                body.style.backgroundPosition = `${50 + (mouseX * 10)}% ${50 + (mouseY * 10)}%`;
+            });
+
+            // Manipula o envio do formulário
+            const form = document.getElementById('recoveryForm');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                alert(`Um e-mail de recuperação será enviado para: ${email}`);
+            });
+        });
+    </script>
+    <script src="login-esqueci-senha.js"></script>
+</body>
+
+</html>

@@ -104,6 +104,14 @@ function showLogin() {
   document.getElementById("loginModal").classList.remove("hidden")
 }
 
+function showForget() {
+  document.getElementById("forgotModal").classList.remove("hidden")
+}
+
+function closeForgetModal() {
+  document.getElementById("forgotModal").classList.add("hidden")
+}
+
 function closeLoginModal() {
   document.getElementById("loginModal").classList.add("hidden")
 }
