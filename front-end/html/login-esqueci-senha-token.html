@@ -1,0 +1,21 @@
+<!-- resetar-senha.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redefinir Senha</title>
+  <link rel="stylesheet" href="login-esqueci-senha.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Redefinir Senha</h2>
+    <form id="resetForm">
+      <input type="text" id="token" placeholder="Token recebido" required />
+      <input type="password" id="novaSenha" placeholder="Nova senha" required />
+      <button type="submit">Resetar Senha</button>
+    </form>
+    <p id="message"></p>
+  </div>
+  <script src="login-esqueci-senha-token.js"></script>
+</body>
+</html>
