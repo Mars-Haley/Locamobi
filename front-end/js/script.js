@@ -96,6 +96,9 @@ function updateNavigation(activeId) {
     }
   }
 }
+function showSignup() {
+  document.getElementById("signupModal").classList.remove("hidden")
+}
 
 function showLogin() {
   document.getElementById("loginModal").classList.remove("hidden")
@@ -119,6 +122,9 @@ function closeTokenModal() {
 
 function closeLoginModal() {
   document.getElementById("loginModal").classList.add("hidden")
+}
+function closeSignupModal() {
+  document.getElementById("signupModal").classList.add("hidden")
 }
 
 // Vehicle grid population (called after rent-vehicle.html is loaded)
