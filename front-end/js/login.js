@@ -1,19 +1,19 @@
 const token = localStorage.getItem('token');
-if(token){
+if (token) {
     location.reload(true);
     localStorage.removeItem('token')
     window.location.href = "index.html";
 }
 
-function togglePassword(){
+function togglePassword() {
     const passwordInput = document.getElementById('password');
     const eyeIcon = document.getElementById('eye-icon');
-    if(passwordInput.type === 'password'){
+    if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
         eyeIcon.innerHTML = `
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
     `
-    }else{
+    } else {
         passwordInput.type = 'password';
         eyeIcon.innerHTML = `
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -22,14 +22,14 @@ function togglePassword(){
     }
 }
 
-document.querySelector('form').addEventListener('submit', function(e){
+document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
     const body = {
         email: document.getElementById('email').value,
         password: document.getElementById('password').value,
     };
 
-    if(!body.email || !body.password){
+    if (!body.email || !body.password) {
         alert('Por favor, preencha todos os campos');
         return;
     }
@@ -39,7 +39,7 @@ document.querySelector('form').addEventListener('submit', function(e){
 
     fetch(url, {
         method: "POST",
-        
+
         body: JSON.stringify(body)
     }).then((result) => {
         return result.json();
@@ -49,8 +49,8 @@ document.querySelector('form').addEventListener('submit', function(e){
         localStorage.setItem('user', JSON.stringify(data.user));
         window.location.href = "index.html"
     })
-    .catch((error) => {
-        console.error(error);
-    })
+        .catch((error) => {
+            console.error(error);
+        })
 });
 
