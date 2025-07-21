@@ -6,35 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locamobi - Aluguel de Veículos</title>
     <link rel="stylesheet" href="/front-end/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body class="font-inter bg-gray-50 text-gray-800">
     <!-- Navigation Header -->
-    <nav class="bg-white border border-gray-200 rounded-2xl mx-4 mt-4 px-6 py-4 shadow-soft sticky top-4 z-50">
+    <nav class="bg-white border border-gray-200 px-6 py-4 shadow-soft">
         <div class="flex items-center justify-between">
             <div class="flex items-center space-x-8">
                 <div class="flex items-center space-x-3 cursor-pointer" onclick="loadPage('home.html', 'nav-home')">
                     <img src="/front-end/assets/logo.png" alt="Logo" class="w-12 h-12">
                 </div>
                 <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#" onclick="loadPage('home.html', 'nav-home')"
-                        class="text-gray-600 font-medium hover:text-primary-orange transition-colors"
-                        id="nav-home">INÍCIO</a>
-                    <a href="#" onclick="loadPage('rent-vehicle.html', 'nav-vehicles')"
-                        class="text-gray-600 font-medium hover:text-primary-orange transition-colors"
-                        id="nav-vehicles">ALUGAR VEÍCULO</a>
-                    <a href="#" onclick="loadPage('register-vehicle.html', 'nav-register')"
-                        class="text-gray-600 font-medium hover:text-primary-orange transition-colors"
-                        id="nav-register">CADASTRAR VEÍCULO</a>
+                    <a href="#" onclick="loadPage('home.html', 'nav-home')" class="text-gray-600 font-medium hover:text-primary-orange transition-colors" id="nav-home">INÍCIO</a>
+                    <a href="#" onclick="loadPage('rent-vehicle.html', 'nav-vehicles')" class="text-gray-600 font-medium hover:text-primary-orange transition-colors" id="nav-vehicles">ALUGAR VEÍCULO</a>
+                    <a href="#" onclick="loadPage('register-vehicle.html', 'nav-register')" class="text-gray-600 font-medium hover:text-primary-orange transition-colors" id="nav-register">CADASTRAR VEÍCULO</a>
                     <a href="#" class="text-gray-600 font-medium hover:text-primary-orange transition-colors">SOBRE
                         NÓS</a>
                 </nav>
             </div>
-            <button onclick="showLogin()"
-                class="btn-primary text-white px-6 py-2 rounded-full font-medium flex items-center space-x-2">
+            <button onclick="showLogin()" class="btn-primary text-white px-6 py-2 rounded-[10px] font-medium flex items-center space-x-2">
                 <i class="fas fa-user text-sm"></i>
                 <span>LOGIN</span>
             </button>
@@ -49,8 +41,7 @@
     <!-- Modals (always present in the DOM for easy access) -->
     <div id="modals-container">
         <!-- Success Modal -->
-        <div id="successModal"
-            class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white rounded-2xl border-2 border-primary-purple p-8 max-w-md mx-4 shadow-strong">
                 <h2 class="text-2xl font-bold text-gray-800 mb-2">
                     Informações Enviadas com Sucesso
@@ -65,8 +56,7 @@
                 </div>
 
                 <div class="flex justify-end">
-                    <button onclick="closeSuccessModal()"
-                        class="btn-primary text-white px-6 py-2 rounded-lg font-medium">
+                    <button onclick="closeSuccessModal()" class="btn-primary text-white px-6 py-2 rounded-lg font-medium">
                         OK
                     </button>
                 </div>
@@ -81,13 +71,11 @@
                 <form class="space-y-4">
                     <div>
                         <label class="block text-gray-600 font-medium mb-2">Email</label>
-                        <input id="email" type="email"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <input id="email" type="email" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
                     <div>
                         <label class="block text-gray-600 font-medium mb-2">Senha</label>
-                        <input id="password" type="password"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <input id="password" type="password" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
                     <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
                         Entrar
@@ -97,10 +85,8 @@
                 <div class="flex justify-between mt-4">
                     <button onclick="closeLoginModal()" class="text-gray-500 hover:text-gray-700">Cancelar</button>
                     <a href="#" class="p-4 text-gray-900">Ainda não
-                        possui uma conta? <button onclick="closeLoginModal() , showSignup()"
-                            class="text-primary-orange">Cadastre-se</button></a>
-                    <button onclick="closeLoginModal(), showForget()"><a href="#"
-                            class="text-primary-orange hover:text-primary-orange">Esqueci minha senha</a></button>
+                        possui uma conta? <button onclick="closeLoginModal() , showSignup()" class="text-primary-orange">Cadastre-se</button></a>
+                    <button onclick="closeLoginModal(), showForget()"><a href="#" class="text-primary-orange hover:text-primary-orange">Esqueci minha senha</a></button>
                 </div>
             </div>
         </div>
@@ -112,11 +98,9 @@
                 <form class="space-y-4">
                     <div>
                         <label class="block text-gray-600 font-medium mb-2">Email</label>
-                        <input type="email"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <input type="email" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
-                    <button onclick="closeForgetModal(), showToken()" type="submit"
-                        class="btn-primary w-full text-white py-3 rounded-lg font-medium">
+                    <button onclick="closeForgetModal(), showToken()" type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
                         Enviar
                     </button>
                 </form>
@@ -133,13 +117,11 @@
                 <form class="space-y-4">
                     <div>
                         <label class="block text-gray-600 font-medium mb-2">Token</label>
-                        <input type="token"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <input type="token" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
                     <div>
                         <label class="block text-gray-600 font-medium mb-2">Nova senha</label>
-                        <input id="newPassword" type="password"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <input id="newPassword" type="password" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
                     <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
                         Enviar
@@ -159,13 +141,11 @@
                 <form class="space-y-4">
                     <div>
                         <label class="block text-gray-600 font-medium mb-2">Email</label>
-                        <input type="email"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <input type="email" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
                     <div>
                         <label class="block text-gray-600 font-medium mb-2">Senha</label>
-                        <input type="password"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <input type="password" class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
                     <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
                         Cadastrar
@@ -174,8 +154,7 @@
 
                 <div class="flex justify-between mt-4">
                     <button onclick="closeSignupModal()" class="text-gray-500 hover:text-gray-700">Cancelar</button>
-                    <button onclick="closeSignupModal(), showLogin()"
-                        class="text-primary-orange hover:text-primary-orange">Já possuo uma conta</button>
+                    <button onclick="closeSignupModal(), showLogin()" class="text-primary-orange hover:text-primary-orange">Já possuo uma conta</button>
                 </div>
             </div>
         </div>
