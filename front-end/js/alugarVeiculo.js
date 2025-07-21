@@ -54,9 +54,60 @@ function renderTableVehicle(){//renderizarTabelasDeVeiculos
     `).join('');
 }
 
+function setLoading(loading){
+    isLoading = loading;
+    const loadingElem = getElementById('loading'); // criar index loading
+    const tableContainer = getElementById('table-container');//criar table-container
+
+    if(loading){
+        loadingElem.classList.remove('hidden');
+        tableContainer.classList.add('hidden');
+    }else{
+        loadingElem.classList.add('hidden');
+        if(vehicles.length > 0){
+            tableContainer.classList.remove('hidden');
+        }
+    }
+}
 
 
+// Sistema de Toast
+function showToast(title, message, type = 'info') {
+    const toast = document.getElementById('toast'); // criar toast
+    const toastIcon = document.getElementById('toast-icon'); //criar toast-icon
+    const toastTitle = document.getElementById('toast-title'); //criar toast-tittle
+    const toastMessage = document.getElementById('toast-message'); //criar toast-message
 
-//setLoading
+    // Configurar ícone e cores baseado no tipo
+    let iconName = 'info';
+    let iconColor = 'text-blue-500';//colocar cor padrao locamobi
 
-//show toast
+    switch (type) {
+        case 'success':
+            iconName = 'check-circle';
+            iconColor = 'text-green-500';
+            break;
+        case 'error':
+            iconName = 'x-circle';
+            iconColor = 'text-red-500';
+            break;
+        case 'warning':
+            iconName = 'alert-triangle';
+            iconColor = 'text-yellow-500';
+            break;
+    }
+
+    toastIcon.setAttribute('data-lucide', iconName);
+    toastIcon.className = `h-5 w-5 ${iconColor}`;
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+
+    toast.classList.remove('hidden');
+    lucide.createIcons();
+
+    // Auto-hide após 5 segundos
+    setTimeout(() => {
+        hideToast();
+    }, 5000);
+}
+
