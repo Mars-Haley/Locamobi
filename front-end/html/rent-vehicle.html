@@ -1,99 +1,120 @@
-<div class="pt-24">
-    <!-- Search Bar -->
-    <div class="container mx-auto px-4 py-6">
-        <div class="bg-white rounded-2xl border border-gray-200 p-4 shadow-soft">
-            <div class="flex items-center space-x-4">
-                <i class="fas fa-search text-gray-400 text-lg"></i>
-                <input type="text" placeholder="Buscar veículos..." class="flex-1 outline-none text-gray-700 text-lg">
-                <button class="btn-primary text-white px-6 py-2 rounded-xl font-medium">
-                    Buscar
-                </button>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="pt-24">
+        <!-- Search Bar -->
+        <div class="container mx-auto px-4 py-6">
+            <div class="bg-white rounded-2xl border border-gray-200 p-4 shadow-soft">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-search text-gray-400 text-lg"></i>
+                    <input type="text" placeholder="Buscar veículos..." class="flex-1 outline-none text-gray-700 text-lg">
+                    <button class="btn-primary text-white px-6 py-2 rounded-xl font-medium">
+                        Buscar
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container mx-auto px-4 pb-16">
-        <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Filters Sidebar -->
-            <div class="lg:w-1/4">
-                <div class="bg-white rounded-2xl border-2 border-primary-orange p-6 shadow-soft fixed top-10 left-6">
-                    <h3 class="font-bold text-primary-orange text-lg mb-6">O QUE VOCÊ ESTÁ PROCURANDO?</h3>
+        <div class="container mx-auto px-4 pb-16">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Filters Sidebar -->
+                <div class="lg:w-1/4">
+                    <div class="bg-white rounded-2xl border-2 border-primary-orange p-6 shadow-soft fixed top-10 left-6">
+                        <h3 class="font-bold text-primary-orange text-lg mb-6">O QUE VOCÊ ESTÁ PROCURANDO?</h3>
 
-                    <div class="mb-8">
-                        <h4 class="font-semibold text-gray-700 mb-4">FILTROS</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <h5 class="text-primary-purple font-medium mb-3">Tipo de Veículos</h5>
-                                <div class="space-y-2">
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                        <span class="ml-3 text-sm text-gray-700">Econômico</span>
-                                    </label>
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                        <span class="ml-3 text-sm text-gray-700">Intermediário</span>
-                                    </label>
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                        <span class="ml-3 text-sm text-gray-700">Premium</span>
-                                    </label>
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                        <span class="ml-3 text-sm text-gray-700">Utilitários</span>
-                                    </label>
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-gray-700 mb-4">FILTROS</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <h5 class="text-primary-purple font-medium mb-3">Tipo de Veículos</h5>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                            <span class="ml-3 text-sm text-gray-700">Econômico</span>
+                                        </label>
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                            <span class="ml-3 text-sm text-gray-700">Intermediário</span>
+                                        </label>
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                            <span class="ml-3 text-sm text-gray-700">Premium</span>
+                                        </label>
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                            <span class="ml-3 text-sm text-gray-700">Utilitários</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mb-8">
-                        <h5 class="text-primary-purple font-medium mb-3">Faixa de Preço/ Diária</h5>
-                        <div class="bg-primary-purple text-white px-4 py-2 rounded-lg text-center font-bold">
-                            R$50 - R$1000
+                        <div class="mb-8">
+                            <h5 class="text-primary-purple font-medium mb-3">Faixa de Preço/ Diária</h5>
+                            <div class="bg-primary-purple text-white px-4 py-2 rounded-lg text-center font-bold">
+                                R$50 - R$1000
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <h5 class="text-primary-purple font-medium mb-3">Marcas</h5>
-                        <div class="space-y-2">
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                <span class="ml-3 text-sm text-gray-700">Chevrolet</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                <span class="ml-3 text-sm text-gray-700">Volkswagen</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                <span class="ml-3 text-sm text-gray-700">Ford</span>
-                            </label>
-                            <label class="flex items-center cursor-pointer">
-                                <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
-                                <span class="ml-3 text-sm text-gray-700">Hyundai</span>
-                            </label>
+                        <div>
+                            <h5 class="text-primary-purple font-medium mb-3">Marcas</h5>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                    <span class="ml-3 text-sm text-gray-700">Chevrolet</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                    <span class="ml-3 text-sm text-gray-700">Volkswagen</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                    <span class="ml-3 text-sm text-gray-700">Ford</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="w-4 h-4 text-primary-purple rounded border-gray-300 focus:ring-primary-purple">
+                                    <span class="ml-3 text-sm text-gray-700">Hyundai</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Vehicle Grid -->
-            <div class="lg:w-3/4">
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="vehicleGrid">
-                    <!-- Vehicle cards will be populated by JavaScript -->
-                </div>
+                <!-- Vehicle Grid -->
+                <div class="lg:w-3/4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="vehicleGrid">
+                        <!-- Vehicle cards will be populated by JavaScript -->
+                    </div>
 
-                <!-- Pagination -->
-                <div class="flex justify-center mt-12 space-x-2">
-                    <button class="w-10 h-10 rounded-full bg-primary-orange text-white font-medium">1</button>
-                    <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">2</button>
-                    <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">3</button>
-                    <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">4</button>
-                    <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">5</button>
-                    <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">6</button>
-                    <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">...</button>
+                    <div id="veiculo-select-area">
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-12 space-x-2">
+                        <button class="w-10 h-10 rounded-full bg-primary-orange text-white font-medium">1</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">2</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">3</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">4</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">5</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">6</button>
+                        <button class="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-700 font-medium hover:bg-gray-50">...</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <script src="/front-end/js/api.js"></script>
+</body>
+
+</html>
