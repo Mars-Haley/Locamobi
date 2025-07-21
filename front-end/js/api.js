@@ -50,7 +50,6 @@ async function apiPost(route, body) {
 }
 
 //function get veiculos
-//trocar rota do swagger
 async function apiGetVeiculo(route) {
   const response = await fetch(`https://localhost:7151/Veiculo/${route}`, {
     method: "GET",
