@@ -96,8 +96,11 @@ function updateNavigation(activeId) {
     }
   }
 }
-function showSignup() {
-  document.getElementById("signupModal").classList.remove("hidden")
+function showSignupModalStep1() {
+  document.getElementById("signupModalStep1").classList.remove("hidden")
+}
+function showSignupModalStep2() {
+  document.getElementById("signupModalStep2").classList.remove("hidden")
 }
 
 function showLogin() {
@@ -119,12 +122,14 @@ function closeForgetModal() {
 function closeTokenModal() {
   document.getElementById("TokenModal").classList.add("hidden")
 }
-
+function closeSignupModalStep2() {
+  document.getElementById("signupModalStep2").classList.add("hidden")
+}
 function closeLoginModal() {
   document.getElementById("loginModal").classList.add("hidden")
 }
-function closeSignupModal() {
-  document.getElementById("signupModal").classList.add("hidden")
+function closeSignupModalStep1() {
+  document.getElementById("signupModalStep1").classList.add("hidden")
 }
 
 // Vehicle grid population (called after rent-vehicle.html is loaded)

@@ -97,7 +97,7 @@
                 <div class="flex justify-between mt-4">
                     <button onclick="closeLoginModal()" class="text-gray-500 hover:text-gray-700">Cancelar</button>
                     <a href="#" class="p-4 text-gray-500">Ainda não
-                        possui uma conta? <button onclick="closeLoginModal() , showSignup()"
+                        possui uma conta? <button onclick="closeLoginModal() , showSignupModalStep1()"
                             class="text-primary-orange">Cadastre-se</button></a>
                     <button onclick="closeLoginModal(), showForget()"><a href="#"
                             class="text-primary-orange hover:text-primary-orange">Esqueci minha senha</a></button>
@@ -152,32 +152,94 @@
             </div>
         </div>
         <!-- Signup Modal -->
-        <div id="signupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div id="signupModalStep1"
+            class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-strong">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastro</h2>
 
                 <form class="space-y-4">
                     <div class="flex gap-4">
                         <div class="w-1/2">
-                            <label class="block text-gray-600 font-medium mb-2">Email</label>
-                            <input type="email"
+                            <label class="block text-gray-600 font-medium mb-2">Nome</label>
+                            <input type="text"
                                 class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                         </div>
                         <div class="w-1/2">
+                            <label class="block text-gray-600 font-medium mb-2">Sobrenome</label>
+                            <input type="text"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-1/2">
+                            <label class="block text-gray-600 font-medium mb-2">Gênero</label>
+                            <select
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                                <option>Homem</option>
+                                <option>Mulher</option>
+                                <option>Não-Binário</option>
+                                <option>Prefiro não dizer</option>
+                            </select>
+                        </div>
+                        <div class="w-1/2">
+                            <label class="block text-gray-600 font-medium mb-2">Telefone</label>
+                            <input type="text"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-1/2">
+                            <label class="block text-gray-600 font-medium mb-2">Senha</label>
+                            <input type="password"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        </div>
+
+                        <div class="w-1/2">
+                            <label class="block text-gray-600 font-medium mb-2">Confirmar senha</label>
+                            <input type="password"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <button type="submit" onclick="closeSignupModalStep1(), showSignupModalStep2()"
+                            class="btn-primary w-full text-white py-3 rounded-lg font-medium">
+                            Continuar
+                        </button>
+                    </div>
+                </form>
+
+                <div class="flex justify-between mt-4">
+                    <button onclick="closeSignupModalStep1()"
+                        class="text-gray-500 hover:text-gray-700">Cancelar</button>
+                    <button onclick="closeSignupModalStep1(); showLogin()"
+                        class="text-primary-orange hover:text-primary-orange">Já possuo uma conta</button>
+                </div>
+            </div>
+        </div>
+        <div id="signupModalStep2"
+            class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-strong">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastro</h2>
+
+                <form class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="w-1/2">
                             <label class="block text-gray-600 font-medium mb-2">CPF</label>
+                            <input type="text"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        </div>
+                        <div class="w-1/2">
+                            <label class="block text-gray-600 font-medium mb-2">RG</label>
                             <input type="text"
                                 class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-gray-600 font-medium mb-2">Gênero</label>
-                        <select class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
-                            <option>Masculino</option>
-                            <option>Feminino</option>
-                            <option>Não-Binário</option>
-                            <option>Prefiro não dizer</option>
-                        </select>
+                        <label class="block text-gray-600 font-medium mb-2">Telefone</label>
+                        <input type="text"
+                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                     </div>
 
                     <div class="flex gap-4">
@@ -193,14 +255,24 @@
                                 class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                         </div>
                     </div>
-                    <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
-                        Cadastrar
-                    </button>
+                    <div class="flex gap-4">
+                        <div class="w-1/2">
+                            <button onclick="closeSignupModalStep2(),showSignupModalStep1()"
+                                class="btn-secondary w-full text-white py-3 rounded-lg font-medium">
+                                Voltar
+                            </button>
+                        </div>
+                        <div class="w-1/2">
+                            <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
+                                Cadastrar
+                            </button>
+                        </div>
                 </form>
 
                 <div class="flex justify-between mt-4">
-                    <button onclick="closeSignupModal()" class="text-gray-500 hover:text-gray-700">Cancelar</button>
-                    <button onclick="closeSignupModal(); showLogin()"
+                    <button onclick="closeSignupModalStep2()"
+                        class="text-gray-500 hover:text-gray-700">Cancelar</button>
+                    <button onclick="closeSignupModalStep2(); showLogin()"
                         class="text-primary-orange hover:text-primary-orange">Já possuo uma conta</button>
                 </div>
             </div>
