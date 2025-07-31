@@ -151,58 +151,75 @@
                 </div>
             </div>
         </div>
-        <!-- Signup Modal -->
         <div id="signupModalStep1"
             class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-strong">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastro</h2>
 
-                <form class="space-y-4">
-                    <div class="flex gap-4">
-                        <div class="w-1/2">
-                            <label class="block text-gray-600 font-medium mb-2">Nome</label>
-                            <input type="text"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
-                        </div>
-                        <div class="w-1/2">
-                            <label class="block text-gray-600 font-medium mb-2">Sobrenome</label>
-                            <input type="text"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
-                        </div>
+            <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-strong">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastro - Dados Pessoais</h2>
+
+                <form id="signupFormStep1" class="space-y-4">
+                    <!-- Nome completo (campo único) -->
+                    <div>
+                        <label class="block text-gray-600 font-medium mb-2">Nome Completo</label>
+                        <input type="text" id="name" name="name" required
+                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                            placeholder="Digite seu nome completo">
                     </div>
 
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-gray-600 font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                            placeholder="Digite seu email">
+                    </div>
+
+                    <!-- Gênero e Data de Nascimento -->
                     <div class="flex gap-4">
                         <div class="w-1/2">
                             <label class="block text-gray-600 font-medium mb-2">Gênero</label>
-                            <select
+                            <select id="gender" name="gender" required
                                 class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
-                                <option>Homem</option>
-                                <option>Mulher</option>
-                                <option>Não-Binário</option>
-                                <option>Prefiro não dizer</option>
+                                <option value="">Selecione</option>
+                                <option value="0">Homem</option>
+                                <option value="1">Mulher</option>
+                                <option value="2">Não-Binário</option>
+                                <option value="3">Prefiro não dizer</option>
                             </select>
                         </div>
                         <div class="w-1/2">
-                            <label class="block text-gray-600 font-medium mb-2">Telefone</label>
-                            <input type="text"
+                            <label class="block text-gray-600 font-medium mb-2">Data de Nascimento</label>
+                            <input type="date" id="birthday" name="birthday" required
                                 class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
                         </div>
                     </div>
+
+                    <!-- Telefone -->
+                    <div>
+                        <label class="block text-gray-600 font-medium mb-2">Telefone</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required
+                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                            placeholder="(11) 99999-9999">
+                    </div>
+
+                    <!-- Senhas -->
                     <div class="flex gap-4">
                         <div class="w-1/2">
                             <label class="block text-gray-600 font-medium mb-2">Senha</label>
-                            <input type="password"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            <input type="password" id="password" name="password" required minlength="6"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                                placeholder="Mínimo 6 caracteres">
                         </div>
-
                         <div class="w-1/2">
-                            <label class="block text-gray-600 font-medium mb-2">Confirmar senha</label>
-                            <input type="password"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            <label class="block text-gray-600 font-medium mb-2">Confirmar Senha</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                                placeholder="Confirme sua senha">
                         </div>
                     </div>
+
                     <div class="flex gap-4">
-                        <button type="submit" onclick="closeSignupModalStep1(), showSignupModalStep2()"
+                        <button type="button" onclick="validateStep1()"
                             class="btn-primary w-full text-white py-3 rounded-lg font-medium">
                             Continuar
                         </button>
@@ -217,56 +234,67 @@
                 </div>
             </div>
         </div>
+
+        <!-- Step 2: Dados de Endereço -->
         <div id="signupModalStep2"
             class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-strong">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastro</h2>
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Cadastro - Endereço e Documentos</h2>
 
-                <form class="space-y-4">
+                <form id="signupFormStep2" class="space-y-4">
+                    <!-- CPF e RG -->
                     <div class="flex gap-4">
                         <div class="w-1/2">
                             <label class="block text-gray-600 font-medium mb-2">CPF</label>
-                            <input type="text"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            <input type="text" id="cpf" name="cpf" required maxlength="14"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                                placeholder="000.000.000-00">
                         </div>
                         <div class="w-1/2">
                             <label class="block text-gray-600 font-medium mb-2">RG</label>
-                            <input type="text"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                            <input type="text" id="rg" name="rg" required maxlength="12"
+                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                                placeholder="00.000.000-0">
+                            <div class="flex items-center mt-2">
+                                <input type="checkbox" id="noRg"
+                                    class="mr-2 h-4 w-4 text-primary-orange focus:ring-primary-orange border-gray-300 rounded">
+                                <label for="noRg" class="text-sm text-gray-600">Não possuo RG</label>
+                            </div>
                         </div>
                     </div>
 
+                    <!-- Endereço -->
                     <div>
-                        <label class="block text-gray-600 font-medium mb-2">Telefone</label>
-                        <input type="text"
-                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
+                        <label class="block text-gray-600 font-medium mb-2">Endereço</label>
+                        <input type="text" id="address" name="address" required
+                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none"
+                            placeholder="Rua, número, bairro">
+                    </div>
+
+                    <!-- Cidade -->
+                    <div>
+                        <label class="block text-gray-600 font-medium mb-2">Cidade</label>
+                        <select id="cityId" name="cityId" required
+                            class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none bg-white">
+                            <option value="">Selecione uma cidade</option>
+                            <!-- Opções serão carregadas via JavaScript -->
+                        </select>
                     </div>
 
                     <div class="flex gap-4">
                         <div class="w-1/2">
-                            <label class="block text-gray-600 font-medium mb-2">Senha</label>
-                            <input type="password"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
-                        </div>
-
-                        <div class="w-1/2">
-                            <label class="block text-gray-600 font-medium mb-2">Confirmar senha</label>
-                            <input type="password"
-                                class="input-focus w-full p-3 border border-gray-300 rounded-lg outline-none">
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="w-1/2">
-                            <button onclick="closeSignupModalStep2(),showSignupModalStep1()"
+                            <button type="button" onclick="closeSignupModalStep2(); showSignupModalStep1()"
                                 class="btn-secondary w-full text-white py-3 rounded-lg font-medium">
                                 Voltar
                             </button>
                         </div>
                         <div class="w-1/2">
-                            <button type="submit" class="btn-primary w-full text-white py-3 rounded-lg font-medium">
+                            <button type="button" onclick="submitSignup()"
+                                class="btn-primary w-full text-white py-3 rounded-lg font-medium">
                                 Cadastrar
                             </button>
                         </div>
+                    </div>
                 </form>
 
                 <div class="flex justify-between mt-4">
@@ -277,7 +305,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -318,6 +345,7 @@
             }
         }
     </script>
+    <script src="/front-end/js/cadastro.js"></script>
     <script src="/front-end/js/script.js"></script>
     <script src="/front-end/js/login.js"></script>
     <script src="/front-end/js/login-esqueci-senha.js"></script>
