@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar</title>
+</head>
+<script>
+    const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (!token || !user) {
+        // Se não tiver token ou usuário, redireciona para login
+        window.location.href = '/front-end/html/index.html';
+    } else {
+        // Usuário está logado
+        console.log('Usuário logado:', user);
+        // Aqui você pode exibir nome do usuário na interface, por exemplo
+    }
+</script>
+<body>
+    
+    <input type="text" id="edit-name" placeholder="name">
+    <input type="email" id="edit-email" placeholder="email">
+    <input type="password" id="edit-password" placeholder="password">
+    <input type="text" id="edit-phone" placeholder="phone">
+    <input type="text" id="edit-address" placeholder="address">
+    <input type="text" id="edit-photo" placeholder="photo">
+    <input type="text" id="cpf" placeholder="cpf">
+    <input type="text" id="rg" placeholder="rg">
+    <input type="text" id="birthday" placeholder="birthday">
+    <select id="gender">
+  <option value="HOMEM">HOMEM</option>
+  <option value="MULHER">MULHER</option>
+  <option value="NB">NB</option>
+  <option value="N/A">N/A</option>
+</select>
+    <button id="btn-save">Salvar</button>
+    
+</body>
+<script src="/front-end/js/editar-perfil.js"></script>
+</html>
