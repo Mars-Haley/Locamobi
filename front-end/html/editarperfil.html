@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>editar</title>
 </head>
-<script>
-    const token = localStorage.getItem('token');
-    const user = JSON.parse(localStorage.getItem('user'));
-
-    if (!token || !user) {
-        // Se não tiver token ou usuário, redireciona para login
-        window.location.href = '/front-end/html/index.html';
-    } else {
-        // Usuário está logado
-        console.log('Usuário logado:', user);
-        // Aqui você pode exibir nome do usuário na interface, por exemplo
-    }
-</script>
 <body>
     
     <input type="text" id="edit-name" placeholder="name">

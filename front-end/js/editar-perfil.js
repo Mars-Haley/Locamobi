@@ -1,9 +1,18 @@
-const userId = 2; // ajuste para o usuário correto
-const apiUrl = `https://localhost:7082/User/${userId}`; // ajuste conforme sua API
 
-// Função para carregar dados do usuário e preencher os inputs
+
+const token = localStorage.getItem("token");
+
+if (!token) {
+    alert("Você precisa estar logado para acessar esta página.");
+    window.location.href = "/front-end/html/index.html";
+}
+
 function carregarDados() {
-  fetch(apiUrl)
+  fetch(apiUrl, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  })
     .then(response => {
       if (!response.ok) throw new Error('Erro ao buscar usuário');
       return response.json();
@@ -11,7 +20,6 @@ function carregarDados() {
     .then(data => {
       document.getElementById('edit-name').value = data.name || '';
       document.getElementById('edit-email').value = data.email || '';
-      // Nunca preencha senha real, deixe vazio ou outro comportamento
       document.getElementById('edit-password').value = '';
       document.getElementById('gender').value = data.genderText;
       document.getElementById('edit-phone').value = data.phoneNumber || '';
@@ -29,16 +37,14 @@ function carregarDados() {
     });
 }
 
-// Função para salvar dados editados
 function salvarDados() {
   const updatedUser = {
-    id: userId, // 👈 obrigatório
+    id: userId,
     name: document.getElementById('edit-name').value,
     email: document.getElementById('edit-email').value,
     address: document.getElementById('edit-address').value,
     phoneNumber: document.getElementById('edit-phone').value,
-    genderText: document.getElementById('gender').value, // 👈 campo adicional
-    // campos adicionais, se quiser enviar:
+    genderText: document.getElementById('gender').value,
     password: document.getElementById('edit-password').value,
     photo: document.getElementById('edit-photo').value,
     cpf: document.getElementById('cpf').value,
@@ -49,7 +55,8 @@ function salvarDados() {
   fetch(apiUrl, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify(updatedUser)
   })
@@ -64,8 +71,5 @@ function salvarDados() {
     });
 }
 
-// Configura o evento do botão
 document.getElementById('btn-save').addEventListener('click', salvarDados);
-
-// Carrega os dados assim que a página abre
 window.onload = carregarDados;
