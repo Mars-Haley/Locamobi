@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         authButton.parentNode.appendChild(logoutButton);
     } else {
         // Não logado, mostra modal
-        authText.textContent = "LOGIN";
+        authText.textContent = "Entrar";
         authButton.onclick = showLogin;
     }
 });
