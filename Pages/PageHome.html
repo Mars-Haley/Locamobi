@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locamobi - Aluguel de Veículos</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/pageEntrar.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="headerId" class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img class="logo-svg" src="../assets/Logolocamobi.svg" alt="Logo da Locamobi">
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="../Pages/AlugarVeiculo.html">Alugar Veículo</a></li>
+                <li><a href="#cadastrar">Cadastrar Veículo</a></li>
+                <li><a href="#como-funciona">Como Funciona?</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="../Pages/entrar.html" class="btn btn-outline">Cadastrar</a>
+
+            <a href="../Pages/entrar.html" id="openModalBtn" class="btn btn-solid">Entrar</a>
+        </div>
+    </header>
+
+    <header id="header-logadoId" class="header-logado" style="display: none;">
+        <nav class="nav">
+            <div class="logo">
+                <img class="logo-svg" src="../assets/Logolocamobi.svg" alt="Logo da Locamobi">
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="../Pages/AlugarVeiculo.html">Alugar Veículo</a></li>
+                <li><a href="#cadastrar">Cadastrar Veículo</a></li>
+                <li><a href="#como-funciona">Logado</a></li>
+            </ul>
+        </nav>
+        <!--
+        <div class="auth-buttons">
+            <a href="#cadastrar" class="btn btn-outline">Cadastrar</a>
+
+            <button id="openModalBtn" onclick="ModalLogin()" class="btn btn-solid">Entrar</button>
+        </div>-->
+    </header>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo à <span class="brand">Locamobi</span></h1>
+            <p>Alugue seu veículo de forma rápida, segura e sem burocracia, ou transforme o seu carro parado em uma fonte de renda extra.</p>
+            <p class="tagline">Locamobi — seu carro, sua rota, seu tempo.</p>
+            <div class="hero-buttons">
+                <a href="../Pages/AlugarVeiculo.html" class="btn btn-primary">Alugar Veículo</a>
+                <a href="#cadastrar" class="btn btn-secondary">Cadastrar Veículo</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="../assets/Imagem Veiculos.png" alt="Veículos Locamobi - moto, carro e van com dinheiro voando" />
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="how-it-works" id="como-funciona">
+        <div class="container">
+            <div class="how-content">
+                <h2>Como Funciona?</h2>
+                <p>"Alugar ou compartilhar veículos nunca foi tão fácil! Na <span class="brand-text">Locamobi</span>, você escolhe se quer dirigir ou disponibilizar seu carro, tudo com segurança e praticidade."</p>
+                <p class="steps">Veja como funciona em poucos passos.</p>
+            </div>
+            <div class="video-section">
+                <div class="video-placeholder">
+                    <span>📹 Vídeo em breve</span>
+                </div>
+                <h3>Inserir vídeo de passo a passo por sites pronto. Com até 4 partes.</h3>
+                <p>Tutorial completo sobre como usar a plataforma</p>
+                <div class="step-indicator">Passo 1</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="car-icon"> <img src="../assets/Logolocamobi.svg" alt="">
+                    <h4>Locamobi</h4>
+                </div>
+
+            </div>
+            <div class="footer-links">
+                <a href="#">Sobre a Locamobi</a>
+                <a href="#">Contrato e Termos</a>
+                <a href="#">Políticas</a>
+                <a href="#">Suporte</a>
+                <a href="#">Contato</a>
+
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><img src="../assets/iconeWats.svg" alt=""></a>
+                    <a href="https://www.instagram.com/locamobi_/" class="social-icon" target="_blank"><img src="../assets/iconeInstagram.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!---->
+    </div>
+    <!--  <script src="../automation/modalLogin.js"></script>-->
+    <script src="../automation/logado.js"></script>
+
+</body>
+
+</html>
