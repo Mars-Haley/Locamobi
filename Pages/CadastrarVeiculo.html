@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Veículo - Locamobi</title>
-  <link rel="stylesheet" href="../styles/cadastrarVeiculo.css">
+  <link rel="stylesheet" href="../styles/CadastrarVeiculo.css">
+
 </head>
 
 <body>
@@ -89,12 +90,245 @@
 
       <a href="#" class="pdf-link">Visualizar contrato em pdf</a>
 
-      <div class="button-container">
+      <div id="start-screen" class="button-container">
         <button id="openModal" class="btn btn-green">Assinar contrato digitalmente</button>
-        <button class="btn btn-orange">Iniciar cadastro</button>
+        <button onclick="startProcess()" class="btn btn-orange">Iniciar cadastro</button>
       </div>
     </div>
 
+    <!-- Modal 1: Informações Básicas -->
+    <div id="modal1" class="modal-overlay hidden">
+      <div class="modal">
+        <h2>Informações básicas do veículo</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" id="marca" name="marca">
+          </div>
+          <div class="form-group">
+            <label for="modelo">Modelo</label>
+            <input type="text" id="modelo" name="modelo">
+          </div>
+          <div class="form-group">
+            <label for="ano">Ano</label>
+            <input type="number" id="ano" name="ano">
+          </div>
+          <div class="form-group">
+            <label for="cor">Cor</label>
+            <input type="text" id="cor" name="cor">
+          </div>
+          <div class="form-group">
+            <label for="placa">Placa</label>
+            <input type="text" id="placa" name="placa">
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado" name="estado">
+          </div>
+          <div class="form-group">
+            <label for="renavam">RENAVAM</label>
+            <input type="text" id="renavam" name="renavam">
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn btn-secondary" onclick="goBack()">Voltar</button>
+          <button class="btn btn-primary" onclick="nextStep()">Próximo</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-step active"></div>
+          <div class="progress-step"></div>
+          <div class="progress-step"></div>
+          <div class="progress-step"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: Características Técnicas -->
+    <div id="modal2" class="modal-overlay hidden">
+      <div class="modal">
+        <h2>Características Técnicas</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <div class="dropdown-select">
+              <select id="tipo" name="tipo">
+                <option value="">Selecione</option>
+                <option value="hatch">Hatch</option>
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="pickup">Pickup</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="classificacao">Classificação</label>
+            <div class="dropdown-select">
+              <select id="classificacao" name="classificacao">
+                <option value="">Selecione</option>
+                <option value="economico">Econômico</option>
+                <option value="intermediario">Intermediário</option>
+                <option value="executivo">Executivo</option>
+                <option value="luxo">Luxo</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cambio">Tipo de Câmbio</label>
+            <div class="dropdown-select">
+              <select id="cambio" name="cambio">
+                <option value="">Selecione</option>
+                <option value="manual">Manual</option>
+                <option value="automatico">Automático</option>
+                <option value="cvt">CVT</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lugares">Número de Lugares</label>
+            <div class="dropdown-select">
+              <select id="lugares" name="lugares">
+                <option value="">Selecione</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="portas">Número de Portas</label>
+            <div class="dropdown-select">
+              <select id="portas" name="portas">
+                <option value="">Selecione</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ar">Ar Condicionado</label>
+            <div class="dropdown-select">
+              <select id="ar" name="ar">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="airbag">Air Bag</label>
+            <div class="dropdown-select">
+              <select id="airbag" name="airbag">
+                <option value="">Selecione</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn btn-secondary" onclick="goBack()">Voltar</button>
+          <button class="btn btn-primary" onclick="nextStep()">Próximo</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-step active"></div>
+          <div class="progress-step active"></div>
+          <div class="progress-step"></div>
+          <div class="progress-step"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3: Envio de Fotos -->
+    <div id="modal3" class="modal-overlay hidden">
+      <div class="modal">
+        <h2>Envio de fotos do veículo</h2>
+        <div class="orientations">
+          <h3>Orientações</h3>
+          <ul>
+            <li>Enviar No Mínimo 15 Imagens: Frente, Traseira, Lateral Esquerda E Lateral Direita...</li>
+            <li>Boa Iluminação E Fundo Neutro.</li>
+            <li>Sem Placa Coberta Ou Itens Pessoais Visíveis.</li>
+            <li>Máximo 20Mb.</li>
+          </ul>
+        </div>
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+          <div class="upload-icon">☁️</div>
+          <p>Você pode arrastar e soltar arquivos aqui para adicioná-los.</p>
+          <button class="btn btn-primary" style="margin-top: 16px;">Selecionar Fotos do Veículo</button>
+          <p style="margin-top: 8px; color: #666; font-size: 14px;">.jpg, .png e .heic</p>
+        </div>
+        <input type="file" id="fileInput" multiple accept=".jpg,.jpeg,.png,.heic" style="display: none;">
+        <div class="modal-buttons">
+          <button class="btn btn-secondary" onclick="goBack()">Voltar</button>
+          <button class="btn btn-primary" onclick="nextStep()">Próximo</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-step active"></div>
+          <div class="progress-step active"></div>
+          <div class="progress-step active"></div>
+          <div class="progress-step"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4: Informações Comerciais -->
+    <div id="modal4" class="modal-overlay hidden">
+      <div class="modal">
+        <h2>Informações Comerciais</h2>
+        <div class="form-group" style="margin-bottom: 30px;">
+          <label for="disponibilidade" style="font-size: 18px; margin-bottom: 16px; display: block;">
+            Quais dias da semana você quer deixar o veículo disponível para locação?
+          </label>
+          <div class="date-input">
+            <input type="text" id="disponibilidade" name="disponibilidade" value="20/05/2025 - 30/05/2025" readonly>
+          </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 20px;">
+          <label style="font-size: 18px; margin-bottom: 16px; display: block;">
+            Qual será o valor da diária para locação do veículo?
+          </label>
+        </div>
+        <div class="price-range">
+          <h3>Faixa de Preço/ Diária</h3>
+          <div class="range-container">
+            <input type="range" id="priceRange" class="range-slider" min="50" max="900" value="300">
+            <div class="range-values">
+              <span class="min">R$50</span>
+              <span class="max">R$900</span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-buttons">
+          <button class="btn btn-secondary" onclick="goBack()">Voltar</button>
+          <button class="btn btn-primary" onclick="submitForm()">Enviar</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-step active"></div>
+          <div class="progress-step active"></div>
+          <div class="progress-step active"></div>
+          <div class="progress-step active"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5: Sucesso -->
+    <div id="modal5" class="modal-overlay hidden">
+      <div class="modal">
+        <div class="success-message">
+          <h2>Informações enviadas com sucesso</h2>
+          <div class="success-content">
+            <p>Seus dados foram salvos corretamente.</p>
+            <p>Nossa equipe analisará as informações e retornará em até <span class="highlight">5 dias</span> úteis para confirmação.</p>
+            <p>Ficamos à disposição para qualquer dúvida.</p>
+          </div>
+          <button class="btn btn-primary" onclick="resetForm()">OK</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal assinatura digital-->
     <div id="modal">
       <div class="modal-content">
         <h2>Termos e Condições</h2>
@@ -201,6 +435,103 @@
       confirmModalBtn.disabled = true;
       confirmModalBtn.classList.remove('enabled');
     }
+
+
+    // Lógica dos modais de cadastro de veículo
+    let currentStep = 0;
+    const totalSteps = 5;
+
+    function startProcess() {
+      document.getElementById('start-screen').classList.add('hidden');
+      currentStep = 1;
+      showModal(currentStep);
+    }
+
+    function showModal(step) {
+      // Hide all modals
+      for (let i = 1; i <= totalSteps; i++) {
+        document.getElementById(`modal${i}`).classList.add('hidden');
+      }
+
+      // Show current modal
+      if (step > 0 && step <= totalSteps) {
+        document.getElementById(`modal${step}`).classList.remove('hidden');
+      }
+    }
+
+    function nextStep() {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showModal(currentStep);
+      }
+    }
+
+    function goBack() {
+      if (currentStep > 1) {
+        currentStep--;
+        showModal(currentStep);
+      } else {
+        // Voltar para tela inicial
+        document.getElementById('modal1').classList.add('hidden');
+        document.getElementById('start-screen').classList.remove('hidden');
+        currentStep = 0;
+      }
+    }
+
+    function submitForm() {
+      // Aqui você pode adicionar validação dos campos
+      currentStep = 5;
+      showModal(currentStep);
+    }
+
+    function resetForm() {
+      // Reset form and go back to start
+      currentStep = 0;
+      document.getElementById('modal5').classList.add('hidden');
+      document.getElementById('start-screen').classList.remove('hidden');
+
+      // Clear all form fields
+      document.querySelectorAll('input, select').forEach(field => {
+        if (field.type !== 'file' && field.id !== 'disponibilidade') {
+          field.value = '';
+        }
+      });
+    }
+
+    // File upload handling
+    document.getElementById('fileInput').addEventListener('change', function (e) {
+      const files = e.target.files;
+      if (files.length > 0) {
+        const uploadArea = document.querySelector('.upload-area');
+        uploadArea.innerHTML = `
+                    <div class="upload-icon">✅</div>
+                    <p>${files.length} arquivo(s) selecionado(s)</p>
+                    <button class="btn btn-primary" style="margin-top: 16px;" onclick="document.getElementById('fileInput').click()">Alterar Seleção</button>
+                `;
+      }
+    });
+
+    // Price range handling
+    document.getElementById('priceRange').addEventListener('input', function (e) {
+      const value = e.target.value;
+      const slider = e.target;
+      const percentage = ((value - slider.min) / (slider.max - slider.min)) * 100;
+
+      slider.style.background = `linear-gradient(to right, #e67e22 0%, #e67e22 ${percentage}%, #ddd ${percentage}%, #ddd 100%)`;
+
+      // Update display value if needed
+      console.log('Valor selecionado: R$' + value);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        // Close modal or go back
+        if (currentStep > 0) {
+          goBack();
+        }
+      }
+    });
   </script>
 
 
