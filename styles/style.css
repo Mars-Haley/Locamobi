@@ -53,28 +53,6 @@ nav {
   position: relative;
 }
 
-.car-icon::before {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  left: 4px;
-  bottom: -4px;
-}
-
-.car-icon::after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  right: 4px;
-  bottom: -4px;
-}
-
 .nav-menu {
   display: flex;
   gap: 2rem;
