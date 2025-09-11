@@ -1,0 +1,47 @@
+<!-- trecho essencial -->
+<button id="openModal">Abrir modal de termos</button>
+
+<div id="modal" aria-hidden="true" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);">
+  <div role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="background:#fff;padding:20px;border-radius:10px;max-width:700px;width:94%;">
+    <h2 id="modalTitle">Termos e Condições</h2>
+    <div style="max-height:300px;overflow:auto;margin:12px 0;padding-right:8px;color:#222;">
+      <!-- texto resumido dos termos -->
+      <p>Lorem ipsum... (seu texto de termos)</p>
+    </div>
+
+    <label style="display:flex;gap:10px;align-items:center;">
+      <input id="modalAccept" type="checkbox">
+      <span>Eu li e aceito os termos.</span>
+    </label>
+
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px;">
+      <button id="closeModal">Fechar</button>
+      <button id="acceptModal" disabled style="background:#0b74ff;color:white;padding:8px 12px;border-radius:6px;border:0;">Aceitar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  document.getElementById('openModal').addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+  });
+  document.getElementById('closeModal').addEventListener('click', () => {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  });
+  const chkModal = document.getElementById('modalAccept');
+  const acceptBtn = document.getElementById('acceptModal');
+  chkModal.addEventListener('change', () => acceptBtn.disabled = !chkModal.checked);
+  acceptBtn.addEventListener('click', () => {
+    // salvar aceitação (ex: localStorage) e fechar
+    localStorage.setItem('aceitou_termos', '1');
+    modal.style.display = 'none';
+  });
+
+  // se já aceitou, não mostra
+  if (localStorage.getItem('aceitou_termos') === '1') {
+    modal.style.display = 'none';
+  }
+</script>

@@ -90,10 +90,46 @@
       <a href="#" class="pdf-link">Visualizar contrato em pdf</a>
 
       <div class="button-container">
-        <button class="btn btn-green">Assinar contrato digitalmente</button>
+        <button id="openModal" class="btn btn-green">Assinar contrato digitalmente</button>
         <button class="btn btn-orange">Iniciar cadastro</button>
       </div>
     </div>
+
+    <div id="modal">
+      <div class="modal-content">
+        <h2>Termos e Condições</h2>
+        <div class="modal-body">
+          <p>
+            Este é o contrato digital para a utilização do serviço.
+            Ao prosseguir, você concorda com os termos aqui descritos.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Fusce eget sapien sed ante mattis malesuada.
+            Proin sit amet justo fringilla, pulvinar nulla non, imperdiet nisi.
+            Donec ut mauris eu nisl feugiat elementum. Curabitur vitae urna
+            non est venenatis fermentum.
+          </p>
+          <p>
+            Ao clicar em "Aceitar e Assinar", você confirma que leu e concorda
+            com todas as cláusulas deste contrato.
+          </p>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="checkbox-container">
+          <input id="acceptTerms" type="checkbox">
+          <label for="acceptTerms">Eu li e aceito os termos e condições.</label>
+        </div>
+
+        <!-- Ações do modal -->
+        <div class="modal-actions">
+          <button id="closeModal" class="btn btn-close">Cancelar</button>
+          <button id="confirmModal" class="btn btn-accept" disabled>Aceitar e Assinar</button>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- Footer -->
@@ -122,6 +158,52 @@
 
     </div>
   </footer>
+
+  <script>
+    const openModalBtn = document.getElementById('openModal');
+    const modal = document.getElementById('modal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const confirmModalBtn = document.getElementById('confirmModal');
+    const acceptCheckbox = document.getElementById('acceptTerms');
+
+    // Abrir modal
+    openModalBtn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+
+    // Fechar modal
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      resetModal();
+    });
+
+    // Habilitar botão "Aceitar e Assinar" quando checkbox estiver marcado
+    acceptCheckbox.addEventListener('change', () => {
+      if (acceptCheckbox.checked) {
+        confirmModalBtn.disabled = false;
+        confirmModalBtn.classList.add('enabled');
+      } else {
+        confirmModalBtn.disabled = true;
+        confirmModalBtn.classList.remove('enabled');
+      }
+    });
+
+    // Confirmar assinatura
+    confirmModalBtn.addEventListener('click', () => {
+      alert('Contrato assinado digitalmente com sucesso!');
+      modal.style.display = 'none';
+      resetModal();
+    });
+
+    // Resetar estado do modal
+    function resetModal() {
+      acceptCheckbox.checked = false;
+      confirmModalBtn.disabled = true;
+      confirmModalBtn.classList.remove('enabled');
+    }
+  </script>
+
+
 </body>
 
 </html>

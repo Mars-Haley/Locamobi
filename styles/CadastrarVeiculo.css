@@ -360,6 +360,82 @@ nav {
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* Modal assinar contrato*/
+#modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.modal-body {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 15px 0;
+  color: #444;
+  padding-right: 5px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ===== Checkbox ===== */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ===== BOTÕES MODAL ===== */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-close {
+  background-color: #ccc;
+  color: #333;
+}
+
+.btn-close:hover {
+  background-color: #bbb;
+}
+
+.btn-accept {
+  background-color: #28a745;
+  color: white;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-accept.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/*responsive*/
+
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
